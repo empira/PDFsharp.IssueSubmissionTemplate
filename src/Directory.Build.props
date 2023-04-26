@@ -24,10 +24,15 @@
     <DisableGitVersionTask>true</DisableGitVersionTask>
   </PropertyGroup>
 
-  <ItemGroup>
+  <!--<ItemGroup>
+    // GitVersion.MsBuild leads to problem when downloaded from github as ZIP file.
+    // Because there is no .git folder gitversion throws an exception. We removed
+    // it because it is not necessary for this solution.
+  
     <PackageReference Include="GitVersion.MsBuild">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-  </ItemGroup>
+  </ItemGroup>-->
+
 </Project>
