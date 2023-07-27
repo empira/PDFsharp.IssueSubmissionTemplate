@@ -3,13 +3,15 @@
   <Import Condition="Exists('Local.Packages.props')" Project="$([MSBuild]::GetPathOfFileAbove('Local.Packages.props', '$(MSBuildThisFileDirectory)'))" />
 
   <PropertyGroup>
-    <PDFsharp_PackageVersion Condition=" '$(PDFsharp_PackageVersion)'=='' ">6.0.0-preview-2</PDFsharp_PackageVersion>
+    <!-- PDFsharp package version - set version here only. -->
+    <PDFsharp_PackageVersion Condition=" '$(PDFsharp_PackageVersion)'=='' ">6.0.0-preview-3</PDFsharp_PackageVersion>
+
     <NetCore_PackageVersion>6.0.0</NetCore_PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
 
-    <!-- PDFsharp packages -->
+    <!-- PDFsharp packages - package version is set in the variable above. -->
     <PackageVersion Include="PdfSharp" Version="$(PDFsharp_PackageVersion)" />
     <PackageVersion Include="PdfSharp-GDI" Version="$(PDFsharp_PackageVersion)" />
     <PackageVersion Include="PdfSharp-WPF" Version="$(PDFsharp_PackageVersion)" />
