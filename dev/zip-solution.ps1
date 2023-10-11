@@ -1,3 +1,6 @@
+#Requires -PSEdition Core
+#Requires -Version 7.0
+
 $root = "$PSScriptRoot\..\"
 $archive = $root + "\Issue.zip"
 $contents = $root + "\*"

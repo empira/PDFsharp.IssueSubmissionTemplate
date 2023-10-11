@@ -20,14 +20,21 @@ See also: <http://sscce.org/>
 ## Start with our Issue Submission Templates
 
 We have created a solution for PDFsharp and MigraDoc issue reporting.
-Basically the solution contains minimal PDFsharp and MigraDoc programms, one for every build (Core, GDI+, and WPF). Thus there are six projects in the solution.
+Basically the solution contains minimal PDFsharp and MigraDoc programs, one for every build (Core, GDI+, and WPF). Thus there are six projects in the solution.
 
 1. Download the solution from <https://github.com/empira/PDFsharp.IssueSubmissionTemplate>
 1. Add your code that reproduces the issue
-1. Ececute `.\dev\zip-solution.ps1` to zip the solution
+1. Execute `.\dev\zip-solution.ps1` to zip the solution
 1. Send us the zip file
 
-The solution was developed with Visual Studio 2022.
+The solution was developed with Visual Studio 2022. The .PS1 files in the DEV folder require PowerShell Core 7.0 or higher.
+
+Note: The PowerShell script files included with this solution are not signed.
+Set ExecutionPolicy to `Undefined` to execute them under Windows.
+
+```pwsh
+Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope CurrentUser
+```
 
 ## Information about the Issue Submission Template structure
 
