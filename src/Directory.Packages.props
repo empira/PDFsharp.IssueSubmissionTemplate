@@ -4,7 +4,7 @@
 
   <PropertyGroup>
     <!-- PDFsharp package version - set version here only. -->
-    <PDFsharp_PackageVersion Condition=" '$(PDFsharp_PackageVersion)'=='' ">6.0.0-preview-4</PDFsharp_PackageVersion>
+    <PDFsharp_PackageVersion Condition=" '$(PDFsharp_PackageVersion)'=='' ">6.0.0</PDFsharp_PackageVersion>
 
     <NetCore_PackageVersion>6.0.0</NetCore_PackageVersion>
   </PropertyGroup>
