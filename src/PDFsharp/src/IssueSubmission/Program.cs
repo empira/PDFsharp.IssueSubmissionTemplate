@@ -41,7 +41,7 @@ namespace HelloWorld
                 new XRect(0, 0, page.Width, page.Height), XStringFormats.Center);
 
             // Save the document...
-            var filename = IOHelper.CreateTemporaryPdfFileName("IssueTemplate");
+            var filename = PdfFileUtility.GetTempPdfFullFileName("IssueTemplate");
             Console.WriteLine($"Filename='{filename}'");
             document.Save(filename);
             // ...and start a viewer.

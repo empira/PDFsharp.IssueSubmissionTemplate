@@ -37,7 +37,7 @@ namespace HelloWorld
             pdfRenderer.RenderDocument();
 
             // Save the document...
-            var filename = IOHelper.CreateTemporaryPdfFileName("IssueTemplate");
+            var filename = PdfFileUtility.GetTempPdfFullFileName("IssueTemplate");
             pdfRenderer.PdfDocument.Save(filename);
             // ...and start a viewer.
             Process.Start(new ProcessStartInfo(filename) { UseShellExecute = true });
