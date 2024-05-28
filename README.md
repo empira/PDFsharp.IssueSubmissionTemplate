@@ -27,6 +27,9 @@ Basically the solution contains minimal PDFsharp and MigraDoc programs, one for 
 1. Execute `.\dev\zip-solution.ps1` to zip the solution
 1. Send us the zip file
 
+* We prefer to receive files via <https://github.com/empira/PDFsharp/issues>
+* If the zip file contains confidential data, please e-mail to issues[at]pdfsharp.net
+
 The solution was developed with Visual Studio 2022. The .PS1 files in the DEV folder require PowerShell Core 7.0 or higher.
 
 Note: The PowerShell script files included with this solution are not signed.

@@ -38,7 +38,7 @@ namespace HelloWorld
 
             // Draw the text.
             gfx.DrawString("Minimal, reproducible example", font, XBrushes.Black,
-                new XRect(0, 0, page.Width, page.Height), XStringFormats.Center);
+                new XRect(0, 0, page.Width.Point, page.Height.Point), XStringFormats.Center);
 
             // Save the document...
             var filename = PdfFileUtility.GetTempPdfFullFileName("IssueTemplate");
