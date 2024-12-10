@@ -16,9 +16,20 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            // NET6FIX - will be removed
+            // For the Core build a FontResolver is needed.
             if (PdfSharp.Capabilities.Build.IsCoreBuild)
+            {
+#if true
+                // The FailsafeFontResolver will substitute every font by a SegoeWP font.
+                // This way you don't have to provide an own FontResolver for your issue.
+                // If fonts are relevant for your issue, you have to assign an own FontResolver which supports the desired fonts instead.
                 GlobalFontSettings.FontResolver = new FailsafeFontResolver();
+#else
+                // Use this code instead to use a small set of typical Windows fonts like Arial or Times New Roman without a FontResolver under Windows or WSL.
+                GlobalFontSettings.UseWindowsFontsUnderWindows = true;
+                GlobalFontSettings.UseWindowsFontsUnderWsl2 = true;
+#endif
+            }
 
             // Create a MigraDoc document.
             var document = CreateDocument();
