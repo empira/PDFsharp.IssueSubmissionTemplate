@@ -28,7 +28,7 @@ Basically the solution contains minimal PDFsharp and MigraDoc programs, one for 
 1. Send us the zip file
 
 * We prefer to receive files via <https://github.com/empira/PDFsharp/issues>
-* If the zip file contains confidential data, please e-mail to issues[at]pdfsharp.net
+* If the zip file contains confidential data or is very large, please [upload it to our FTP server](https://docs.pdfsharp.net/General/Issue-Reporting/About.html).
 
 The solution was developed with Visual Studio 2022. The .PS1 files in the DEV folder require PowerShell Core 7.0 or higher.
 
@@ -46,7 +46,12 @@ Use these three projects to replicate issues with PDFsharp. The projects have re
 
 The same structure was also prepared for **MigraDoc**. To replicate issues with MigraDoc, use the projects listed unter **MigraDoc** that already have references to PDFsharp and MigraDoc.
 
-If your code only works with a specific flavor, use `#if` around your code to ensure that all six projects of the solution still compile.
+Note that each project has multiple target frameworks.  
+Please let us know which project and which target framework you used to replicate the issue.  
+In the past we identified issues that would show with .NET Framework 4.x, but not with .NET 6 or higher while other issues showed with the WPF build, but not the Core build.
+
+If your code only works with a specific flavor, use `#if` around your code to ensure that all six projects of the solution still compile.  
+Use `#if PDFsharp_Core`, `#if PDFsharp_WPF`, or `#if PDFsharp_GDI` as needed.
 
 Example that uses `XImage.FromGdiPlusImage` only supported by the GDI build:
 
