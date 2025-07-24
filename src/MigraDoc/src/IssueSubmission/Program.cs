@@ -1,14 +1,15 @@
 ﻿// MigraDoc - Creating Documents on the Fly
 // See the LICENSE file in the solution root for more information.
 
-using System.Diagnostics;
 using MigraDoc.DocumentObjectModel;
 using MigraDoc.DocumentObjectModel.Fields;
 using MigraDoc.Rendering;
 using PdfSharp.Fonts;
 using PdfSharp.Pdf;
+using PdfSharp.Pdf.IO;
 using PdfSharp.Quality;
 using PdfSharp.Snippets.Font;
+using System.Diagnostics;
 
 namespace HelloWorld
 {
@@ -46,6 +47,11 @@ namespace HelloWorld
 
             // Layout and render document to PDF.
             pdfRenderer.RenderDocument();
+
+#if DEBUG
+            // Create PDF files that are somewhat human-readable.
+            pdfRenderer.PdfDocument.Options.Layout = PdfWriterLayout.Verbose;
+#endif
 
             // Save the document...
             var filename = PdfFileUtility.GetTempPdfFullFileName("IssueTemplate");

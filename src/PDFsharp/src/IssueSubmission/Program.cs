@@ -7,6 +7,7 @@ using PdfSharp;
 using PdfSharp.Drawing;
 using PdfSharp.Fonts;
 using PdfSharp.Pdf;
+using PdfSharp.Pdf.IO;
 using PdfSharp.Quality;
 using PdfSharp.Snippets.Font;
 
@@ -37,6 +38,11 @@ namespace HelloWorld
             document.Info.Author = "Your Name";
             document.Info.Subject = "Demonstrate an issue of PDFsharp";
             document.PageLayout = PdfPageLayout.SinglePage;
+
+#if DEBUG
+            // Create PDF files that are somewhat human-readable.
+            document.Options.Layout = PdfWriterLayout.Verbose;
+#endif
 
             // Create an empty page in this document.
             var page = document.AddPage();
