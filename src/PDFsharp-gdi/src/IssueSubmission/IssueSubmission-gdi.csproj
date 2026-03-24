@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net6.0-windows;net8.0-windows;net462</TargetFrameworks>
+    <TargetFrameworks>net10.0-windows;net8.0-windows;net462</TargetFrameworks>
     <DefineConstants>PDFsharp_GDI</DefineConstants>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
