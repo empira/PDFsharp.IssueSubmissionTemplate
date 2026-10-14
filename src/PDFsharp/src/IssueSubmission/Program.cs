@@ -17,6 +17,9 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
+            // Set AGPL license.
+            PdfSharpLicense.SetAgplLicense();
+
             // For the Core build a FontResolver is needed.
             if (Capabilities.Build.IsCoreBuild)
             {
